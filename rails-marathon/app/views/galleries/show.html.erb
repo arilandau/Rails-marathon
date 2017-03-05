@@ -1,0 +1,19 @@
+<h1><%= @gallery.name %></h1>
+
+  <p><strong>City:</strong> <%= @gallery.city %></p>
+  <p><strong>State:</strong> <%= @gallery.state %></p>
+  <p><strong>ZIP:</strong> <%= @gallery.zip %></p>
+
+  <% if !@gallery.description.blank? %>
+    <p><strong>Description:</strong> <%= @gallery.description %></p>
+  <% end %>
+
+<h2>Paintings</h2>
+  <ul>
+  <% @paintings.each do |painting| %>
+    <li><%= painting.title %></li>
+  <% end %>
+</ul>
+
+<p><%= link_to "Add a Painting", new_gallery_painting_path(@gallery) %></p>
+<p><%= link_to "All Galleries", galleries_path %></p>
